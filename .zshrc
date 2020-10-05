@@ -1,30 +1,24 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export TERM="xterm-256color"
+
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mshamasa/.oh-my-zsh"
+export ZSH="/Users/ms/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="dracula"
 # ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
-ZSH_THEME=""
-# Load Nerd Fonts with Powerlevel9k theme for Zsh
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
-POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -33,8 +27,14 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -60,20 +60,32 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
+# PROMPT=${PROMPT/\%c/\%~}
+RPROMPT="%*"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
+source $HOME/Antigen/antigen.zsh
 
 # User configuration
+
+# Antigen Bundle Manager
+# load oh-my-zsh library
+antigen use oh-my-zsh
+
+# defaults that come with oh my zsh
+# antigen bundle tmux 
+antigen bundle git
+antigen bundle yarn 
+antigen bundle command-not-found
+
+# custom zsh plugins
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# zsh default themes
+
+antigen apply
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -90,37 +102,13 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set Spaceship ZSH as a prompt
-# autoload -U promptinit; promptinit
-# prompt pure
-
-# autoload -U promptinit; promptinit
-# prompt spaceship
-
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.bash_profile
-
+# alias canary="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir='/tmp/canary_dev'"
 alias chrome="open -a Google\ Chrome --args --disable-web-security --user-data-dir='/tmp/chrome_dev'"
-alias canary="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir='/tmp/canary_dev'"
 
-alias tm="tmux -CC new -A -s $1"
-alias pfetch="sh /Users/mshamasa/pfetch/pfetch"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# run pfetch to display some infossss
-pfetch
+source $ZSH/oh-my-zsh.sh
