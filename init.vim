@@ -28,8 +28,6 @@ set cmdheight=2
 " delays and poor user experience.
 set updatetime=50
 
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -47,7 +45,6 @@ Plug 'vim-airline/vim-airline'
 call plug#end()
 
 let mapleader = " "
-" let g:airline_theme='deus'
 nor <leader>nt :NERDTree<CR>
 nor <leader>f :FZF<CR>
 nor <leader>h :wincmd h<CR>
