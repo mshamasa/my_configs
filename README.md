@@ -4,3 +4,6 @@ This is my basic setup for
  - Neovim
  - oh my zsh
  - tmux
+
+Todo
+ - Add more??
