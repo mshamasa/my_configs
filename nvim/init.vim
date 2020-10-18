@@ -39,7 +39,6 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 " git
 Plug 'tpope/vim-fugitive'
-" Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -60,45 +59,16 @@ Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
-" Fix files with prettier, and then ESLint.
-let g:ale_linters = { 'javascript': ['xo', 'tsserver'], 'python': ['flake8'] }
-let g:ale_fixers = { 'javascript': ['prettier'], 'json': ['prettier'], 
-    \ 'python': ['black, isort'] }
-let g:neoformat_enabled_python = ['black']
-let g:ale_sign_column_always = 1
-let g:ale_lint_on_save = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_completion_enabled=1
-"let g:ale_open_list=1
-let g:rainbow_active = 1
-
-autocmd BufWritePre *.py execute ':Black'
-autocmd BufWritePre *.js execute ':Prettier'
-
-let mapleader = " "
-" let g:airline_theme='deus'
-nor <silent><leader>nt :NERDTree<CR>
-nor <silent><leader>f :FZF<CR>
-nor <silent><leader>h :wincmd h<CR>
-nor <silent><leader>j :wincmd j<CR>
-nor <silent><leader>k :wincmd k<CR>
-nor <silent><leader>l :wincmd l<CR>
-" Use tab to select from popup window 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" : "\<TAB>"
-" ALE error movements
-nor <silent><leader>aj :ALENext<CR>
-nor <silent><leader>ak :ALEPrevious<CR>
-
 colorscheme gruvbox
 set background=dark
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
-"LSP configs
-:lua << END
-  require'nvim_lsp'.tsserver.setup{}
-END
+source $HOME/.config/nvim/alec.vim
+source $HOME/.config/nvim/mappings.vim
+source $HOME/.config/nvim/lsp.vim
+
+autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.js execute ':Prettier'
 
