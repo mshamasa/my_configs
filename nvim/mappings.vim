@@ -8,9 +8,6 @@ nor <silent><leader>l :wincmd l<CR>
 " Use tab to select from popup window 
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
-" ALE error movements
-nor <silent><leader>aj :ALENext<CR>
-nor <silent><leader>ak :ALEPrevious<CR>
 
 " Open in new tab
 nor <silent>gf <C-W>gf
