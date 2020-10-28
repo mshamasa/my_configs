@@ -74,5 +74,5 @@ nmap <silent> gr <Plug>(coc-references)
 "endfunction
 
 autocmd BufWritePre *.py execute ':Black'
-autocmd BufWritePre *.{js,ts,tsx} execute ':Prettier'
+autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Prettier'
 
