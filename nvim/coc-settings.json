@@ -1,12 +1,12 @@
 {
-    "eslint.filetypes": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact"
-    ],
-    "diagnostic.errorSign": "",
-    "diagnostic.warningSign": "",
-    "python.jediEnabled": false,
-    "python.linting.flake8Enabled": true
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "python.jediEnabled": false,
+  "python.linting.flake8Enabled": true
 }
