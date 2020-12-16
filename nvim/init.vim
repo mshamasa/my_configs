@@ -10,15 +10,13 @@ let $FZF_DEFAULT_OPTS='--reverse'
 let g:lightline = {
       \ 'colorscheme': 'darcula',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'gitbranch', 'filename' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'absolutepath', 'filename' ] ],
       \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
 
 let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeShowHidden = 1
 "let g:NERDTreeIgnore = ['^node_modules$']
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -59,6 +57,10 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nor <S-Left> :tabprevious<CR>
+nor <S-Right> :tabnext<CR>
+
 
 " Use K to show documentation in preview window.
 "nnoremap <silent> K :call <SID>show_documentation()<CR>
