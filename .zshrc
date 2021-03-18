@@ -10,7 +10,11 @@ fi
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # source $ZSH/oh-my-zsh.sh
+# source antigen for mac
 source $HOME/Antigen/antigen.zsh
+
+# source antigen for ubuntu
+# source /usr/share/zsh-antigen/antigen.zsh
 
 # User configuration
 
@@ -36,7 +40,7 @@ antigen apply
 
 # Example aliases
 # alias canary="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir='/tmp/canary_dev'"
-alias chrome="open -a Google\ Chrome --args --disable-web-security --user-data-dir='/tmp/chrome_dev'"
+# alias chrome="open -a Google\ Chrome --args --disable-web-security --user-data-dir='/tmp/chrome_dev'"
 
 #source $ZSH/oh-my-zsh.sh
 
