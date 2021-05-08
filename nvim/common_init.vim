@@ -33,10 +33,8 @@ set shortmess+=c
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-"let g:material_theme_style = 'default'
-"color material 
-color gruvbox
-"color onedark
-"color dracula 
-set background=dark
+" color material 
+" color gruvbox
+color onedark
 
+set background=dark

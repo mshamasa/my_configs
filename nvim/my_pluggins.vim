@@ -1,15 +1,9 @@
 call plug#begin()
 
 Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
 " git
 Plug 'tpope/vim-fugitive'
-" auto complete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'luochen1990/rainbow'
+Plug 'tpope/vim-commentary'
 " black to format python code
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'prettier/vim-prettier', {
@@ -25,5 +19,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
